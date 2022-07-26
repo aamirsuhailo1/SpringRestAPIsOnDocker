@@ -1,0 +1,13 @@
+2022-07-19 14:09:00 INFO  PropertiesFileUtil:41 - Key is : baseurl
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:42 - Value for key baseurl is http://localhost:8080/api/users/
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:41 - Key is : health.endpoint
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:42 - Value for key health.endpoint is health/getAppHealth
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:41 - Key is : createuser.endpoint
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:42 - Value for key createuser.endpoint is create
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:41 - Key is : getallusers.endpoint
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:42 - Value for key getallusers.endpoint is getAllUsers
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:41 - Key is : specificuser.endpoint
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:42 - Value for key specificuser.endpoint is getUser
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:41 - Key is : deleteuser.endpoint
+  2022-07-19 14:09:00 INFO  PropertiesFileUtil:42 - Value for key deleteuser.endpoint is deleteUser
+  

@@ -1,9 +1,26 @@
 version: "3"
 services:
-  mydockerapp:
+  contappserv:
     build: .
-    image: mydockerjar
+    image: appimg
     ports:
       - "8080:8080"
-    container_name: myapp-container
+    container_name: appcont
+    networks:
+      - springnetwork
+
+  testserv1:
+    build:
+      context: ./in-memory-tests/
+    image: testsimg
+    container_name: testscont
+    networks:
+      - springnetwork
+    depends_on:
+      - contappserv
+
+
+networks:
+  springnetwork:
+    driver: bridge
     
