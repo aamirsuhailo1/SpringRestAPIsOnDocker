@@ -6,8 +6,10 @@ import com.ats.helper.PayloadCreator;
 import com.ats.pojos.User;
 import com.ats.utils.PropertiesFileUtil;
 import io.restassured.response.Response;
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 
 public class UserTests {
 
@@ -46,7 +48,8 @@ public class UserTests {
         healthUrl = baseUrl+healthEndpoint;
         Response response = aPIRunnerUtil.getRequest(healthUrl);
         int statusCode = response.getStatusCode();
-        CustomAssertion.isEqual(statusCode,200,"health endpoint");
+        System.out.println("Response from testApplicationHealth is : "+response.getBody().toString());
+        CustomAssertion.isEqual(200,statusCode,"health endpoint");
     }
 
     @Test(priority = 1)
@@ -55,7 +58,9 @@ public class UserTests {
         User payload = payloadCreator.createUserPayload(12312,"suhail","323345","BXR4556UH","Hyderabad");
         Response response = aPIRunnerUtil.postRequest(createUrl,payload);
         int statusCode = response.getStatusCode();
-        CustomAssertion.isEqual(statusCode,200,"create user endpoint");
+        System.out.println("Response from testCreateUser is : "+response.getBody().toString());
+        CustomAssertion.isEqual(200,statusCode,"create user endpoint");
+
     }
 
     @Test(priority = 2)
@@ -63,7 +68,9 @@ public class UserTests {
         getAllUserUrl = baseUrl+getAllUsersEndpoint;
         Response response = aPIRunnerUtil.getRequest(getAllUserUrl);
         int statusCode = response.getStatusCode();
-        CustomAssertion.isEqual(statusCode,200,"get all users endpoint");
+        System.out.println("Response from testGetAllUsers is : "+response.getBody().toString());
+        CustomAssertion.isEqual(200,statusCode,"get all users endpoint");
+
     }
 
     @Test(priority = 3)
@@ -71,7 +78,9 @@ public class UserTests {
         getSpecificUserUrl = baseUrl+getSpecificUserEndpoint+"/12312";
         Response response = aPIRunnerUtil.getRequest(getSpecificUserUrl);
         int statusCode = response.getStatusCode();
-        CustomAssertion.isEqual(statusCode,200,"get specific user endpoint");
+        System.out.println("Response from testGetSpecificUser is : "+response.getBody().toString());
+        CustomAssertion.isEqual(200,statusCode,"get specific user endpoint");
+
     }
 
     @Test(priority = 4)
@@ -79,7 +88,9 @@ public class UserTests {
         deleteUserUrl = baseUrl+deleteUserEndpoint+"/12312";
         Response response = aPIRunnerUtil.deleteRequest(deleteUserUrl);
         int statusCode = response.getStatusCode();
-        CustomAssertion.isEqual(statusCode,200,"delete user endpoint");
+        System.out.println("Response from testDeleteUser is : "+response.getBody().toString());
+        CustomAssertion.isEqual(200,statusCode,"delete user endpoint");
+
     }
 
     @Test(priority = 5)
@@ -87,7 +98,9 @@ public class UserTests {
         getSpecificUserUrl = baseUrl+getSpecificUserEndpoint+"/12312";
         Response response = aPIRunnerUtil.getRequest(getSpecificUserUrl);
         int statusCode = response.getStatusCode();
-        CustomAssertion.isEqual(statusCode,500,"get specific user endpoint");
+        System.out.println("Response from testGetSpecificUserAgain is : "+response.getBody().toString());
+        CustomAssertion.isEqual(200,statusCode,"get specific user endpoint");
+
     }
 
 }

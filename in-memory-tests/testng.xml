@@ -10,5 +10,5 @@
     <classes>
       <class name="com.ats.tests.UserTests"/>
     </classes>
-  </test> 
+  </test>
 </suite>

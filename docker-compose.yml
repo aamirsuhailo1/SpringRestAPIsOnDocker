@@ -1,21 +1,23 @@
 version: "3"
 services:
-#  contappserv:
-#    build: .
-#    image: imgapp
-#    ports:
-#      - "8080:8080"
-#    container_name: contapp
-#    networks:
-#      - springnetwork
+  contappserv:
+    build: .
+    image: appimg
+    ports:
+      - "8080:8080"
+    container_name: appcont
+    networks:
+      - springnetwork
 
-  testserv:
+  testserv1:
     build:
-      dockerfile: in-memory-tests/Dockerfile
+      context: ./in-memory-tests/
     image: testsimg
     container_name: testscont
     networks:
       - springnetwork
+    depends_on:
+      - contappserv
 
 
 networks:

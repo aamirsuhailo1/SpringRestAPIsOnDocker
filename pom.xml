@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.ats</groupId>
-	<artifactId>SpringRestAPIsOnLocalHost</artifactId>
+	<artifactId>SpringRestAPIsOnDocker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>RestAPIs</name>
 	<description>Demo project for Spring Boot Rest APIs</description>

@@ -1,0 +1,12 @@
+version: "3"
+services:
+  testing-app-service:
+    build: .
+    image: testing-app
+    container_name: testing-app-cont
+    networks:
+      - api-network
+
+networks:
+  api-network:
+    driver: bridge
